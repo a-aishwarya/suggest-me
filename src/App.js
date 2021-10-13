@@ -1,23 +1,35 @@
-import logo from './logo.svg';
+import happy from './happy.jpg';
+import suggest from './suggest-me.jpg';
 import './App.css';
 
+import Axios from 'axios';
+import { useState } from 'react';
+
+
+
 function App() {
-  return (
+
+  
+  
+  const [task,setTask]=useState();
+  
+    let getTask=function(){
+    Axios.get("https://www.boredapi.com/api/activity").then(
+      (response)=>{
+        console.log(response);
+        setTask(response.data.activity);
+      }
+    );
+
+  };
+
+  return(
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <h1 className="head-align">Hey! Feeling bored and indecisive at the same time? 
+      Click below to find out what you can do!</h1>
+    <img className="img-cont"  src={suggest} alt="happy" />
+    <button className='btn  center-place' onClick={getTask}>Click me!</button>
+    <h1 id="final-task" > {task}</h1>
     </div>
   );
 }
