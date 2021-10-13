@@ -27,7 +27,7 @@ function App() {
     <div className="App">
     <h1 className="head-align">Hey! Feeling bored and indecisive at the same time? 
       Click below to find out what you can do!</h1>
-    <img className="img-cont"  src={suggest} alt="happy" />
+    <img className="img-contr"  src={suggest} alt="happy" />
     <button className='btn  center-place' onClick={getTask}>Click me!</button>
     <h1 id="final-task" > {task}</h1>
     </div>
