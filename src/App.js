@@ -24,7 +24,7 @@ function App() {
   };
 
   return(
-    <div className="App">
+    <div className="App-cont">
     <h1 className="head-align">Hey! Feeling bored and indecisive at the same time? 
       Click below to find out what you can do!</h1>
     <img className="img-contr"  src={suggest} alt="happy" />
